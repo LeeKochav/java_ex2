@@ -20,6 +20,7 @@ public class Node implements node_data, Serializable {
         setWeight(Double.MAX_VALUE);
         setTag(1);
         this.info=null;
+        setLocation(new Point3D((double)this.getKey(),(double)this.getKey()));
     }
     public Node(node_data n)
     {
@@ -61,7 +62,7 @@ public class Node implements node_data, Serializable {
     }
 
     @Override
-    public String toString()  {return new String("Node"+this.key+","+this.getInfo());}
+    public String toString()  {return new String("Node"+this.key+" location:"+this.getLocation().toString()+" parent:"+this.getInfo());}
 
     @Override
     public void setInfo(String s) {

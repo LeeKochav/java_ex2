@@ -23,9 +23,9 @@ public class Graph_Algo implements graph_algorithms {
 	}
 
 	@Override
-	public void init(String file_name) {
-		try
-		{
+	public void init(String file_name) throws Exception {
+//		try
+//		{
 			FileInputStream file = new FileInputStream(file_name);
 			ObjectInputStream in = new ObjectInputStream(file);
 
@@ -35,17 +35,17 @@ public class Graph_Algo implements graph_algorithms {
 			file.close();
 
 			System.out.println("Object has been deserialized");
-		}
-
-		catch(IOException ex)
-		{
-			System.out.println("IOException is caught");
-		}
-
-		catch(ClassNotFoundException ex)
-		{
-			System.out.println("ClassNotFoundException is caught");
-		}
+//		}
+//
+//		catch(IOException ex)
+//		{
+//			System.out.println("IOException is caught");
+//		}
+//
+//		catch(ClassNotFoundException ex)
+//		{
+//			System.out.println("ClassNotFoundException is caught");
+//		}
 
 	}
 
@@ -61,11 +61,10 @@ public class Graph_Algo implements graph_algorithms {
 			out.close();
 			file.close();
 
-			System.out.println("Object has been serialized");
 		}
 		catch(IOException ex)
 		{
-			System.out.println("IOException is caught");
+			throw new RuntimeException("IOException is caught");
 		}
 
 	}
@@ -200,7 +199,7 @@ public class Graph_Algo implements graph_algorithms {
 			System.out.println(this.graphAlgo.getE(node.getKey()));
 		}
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 //		DGraph g = new DGraph(6);
 //		g.connect(0, 5, 10);
