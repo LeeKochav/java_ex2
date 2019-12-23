@@ -23,50 +23,39 @@ public class Graph_Algo implements graph_algorithms {
 	}
 
 	@Override
-	public void init(String file_name) throws Exception {
-//		try
-//		{
-			FileInputStream file = new FileInputStream(file_name);
-			ObjectInputStream in = new ObjectInputStream(file);
+	public void init(String file_name) {
 
-			graphAlgo = (graph)in.readObject();
+	    try {
+            FileInputStream file = new FileInputStream(file_name);
+            ObjectInputStream in = new ObjectInputStream(file);
 
-			in.close();
-			file.close();
+            graphAlgo = (graph) in.readObject();
 
-			System.out.println("Object has been deserialized");
-//		}
-//
-//		catch(IOException ex)
-//		{
-//			System.out.println("IOException is caught");
-//		}
-//
-//		catch(ClassNotFoundException ex)
-//		{
-//			System.out.println("ClassNotFoundException is caught");
-//		}
-
+            in.close();
+            file.close();
+        }
+	    catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 	}
 
 	@Override
-	public void save(String file_name) {
-		try
-		{
-			FileOutputStream file = new FileOutputStream(file_name);
-			ObjectOutputStream out = new ObjectOutputStream(file);
+	public void save(String file_name){
 
-			out.writeObject(graphAlgo);
+	    try {
+            FileOutputStream file = new FileOutputStream(file_name);
+            ObjectOutputStream out = new ObjectOutputStream(file);
 
-			out.close();
-			file.close();
+            out.writeObject(graphAlgo);
 
-		}
-		catch(IOException ex)
-		{
-			throw new RuntimeException("IOException is caught");
-		}
-
+            out.close();
+            file.close();
+        }
+	    catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 	}
 
 	@Override
@@ -152,7 +141,6 @@ public class Graph_Algo implements graph_algorithms {
 	public List<node_data> TSP(List<Integer> targets) {
 		/*
 		Since nodes IDS are increase by 1, when creating a new node, source always will be zero.
-
 		 */
 		Collections.sort(targets);
 		LinkedList<node_data> ans=new LinkedList<node_data>();
@@ -165,14 +153,15 @@ public class Graph_Algo implements graph_algorithms {
 			{
 				tmp = shortestPath(src, dst);
 				if (tmp == null) return null;
-					tmp.remove(graphAlgo.getNode(src));
-					ans.addAll(tmp);
+				tmp.remove(graphAlgo.getNode(src));
+				ans.addAll(tmp);
 				src = dst;
 			}
 		}
 
 		return ans;
- 	}
+	}
+
 
 	@Override
 	public graph copy() {
@@ -201,20 +190,20 @@ public class Graph_Algo implements graph_algorithms {
 	}
 	public static void main(String[] args) throws Exception {
 
-//		DGraph g = new DGraph(6);
-//		g.connect(0, 5, 10);
-//		g.connect(0, 2, 20);
-//		g.connect(5, 1, 25);
-//		g.connect(5, 3, 7);
-//		g.connect(2, 3, 30);
-//		g.connect(1, 4, 4);
-//		g.connect(3, 4, 2);
-//		g.connect(1,6,1);
-//		g.connect(4,6,3);
+		DGraph g = new DGraph(6);
+		g.connect(0, 5, 10);
+		g.connect(0, 2, 20);
+		g.connect(5, 1, 25);
+		g.connect(5, 3, 7);
+		g.connect(2, 3, 30);
+		g.connect(1, 4, 4);
+		g.connect(3, 4, 2);
+		g.connect(1,6,1);
+		g.connect(4,6,3);
 
 		Graph_Algo algo = new Graph_Algo();
 		Graph_Algo algo2 = new Graph_Algo();
-		//algo.init(g);
+		algo.init(g);
 //		algo.print();
 //		graph m=algo.copy();
 //		System.out.println("**************");
@@ -223,24 +212,24 @@ public class Graph_Algo implements graph_algorithms {
 //			System.out.println("Edges:\n");
 //			System.out.println(m.getE(node.getKey()));
 //		}
-//		LinkedList<Integer> TMP=new LinkedList<Integer>();
-//		TMP.add(3);
-//		TMP.add(4);
-//		TMP.add(5);
-//		//TMP.add(5);
-//		System.out.println(algo.TSP(TMP));
+		LinkedList<Integer> TMP=new LinkedList<Integer>();
+		TMP.add(1);
+		TMP.add(4);
+		TMP.add(5);
+		//TMP.add(5);
+		System.out.println(algo.TSP(TMP));
 
-		DGraph g2 = new DGraph(4);
-		g2.connect(0, 1, 10);
-		g2.connect(1, 2, 20);
-		g2.connect(2, 4, 30);
-		//g2.connect(4, 2, 40);
-		g2.connect(2, 3, 1);
-		g2.connect(3, 0, 2);
-		algo.init(g2);
-		algo.save("file.txt");
-		algo2.init("file.txt");
-		algo2.print();
+//		DGraph g2 = new DGraph(4);
+//		g2.connect(0, 1, 10);
+//		g2.connect(1, 2, 20);
+//		g2.connect(2, 4, 30);
+//		//g2.connect(4, 2, 40);
+//		g2.connect(2, 3, 1);
+//		g2.connect(3, 0, 2);
+//		algo.init(g2);
+//		algo.save("file.txt");
+//		algo2.init("file.txt");
+//		algo2.print();
 		//System.out.println(algo.isConnected());
 	}
 }

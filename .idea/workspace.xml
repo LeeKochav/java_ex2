@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="013f0542-9e4d-4cb8-b6e7-a753f683516b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/dataStructure/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/dataStructure/Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/graph_algorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/graph_algorithms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Graph_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Graph_GUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +113,8 @@
       <workItem from="1576490622965" duration="18035000" />
       <workItem from="1576657849240" duration="38897000" />
       <workItem from="1576836169481" duration="49375000" />
-      <workItem from="1577033857162" duration="2723000" />
+      <workItem from="1577033857162" duration="2854000" />
+      <workItem from="1577086830723" duration="8861000" />
     </task>
     <servers />
   </component>
@@ -145,11 +141,6 @@
           <url>file://$PROJECT_DIR$/src/dataStructure/DGraph.java</url>
           <line>151</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/algorithms/Graph_Algo.java</url>
-          <line>243</line>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,9 +5,9 @@ import dataStructure.DGraph;
 import dataStructure.edge_data;
 import dataStructure.graph;
 import dataStructure.node_data;
+import sun.font.Font2D;
 import utils.Point3D;
-import utils.Range;
-import utils.StdDraw;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,12 +15,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Random;
 
 public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
 
     private graph graph;
+    private Graph_Algo algoGraph;
     final int NODE_WIDTH_HEIGHT=10;
 
     public Graph_GUI(graph g){
@@ -32,11 +35,14 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
     private void initGui(int width, int height) {
        this.setSize(width,height);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Graph_GUI");
         MenuBar menuBar=new MenuBar();
-        Menu menu=new Menu("Menu");
+        Menu menu=new Menu("File");
+        menu.setFont(new Font("deafult", Font.BOLD,12));
         this.setMenuBar(menuBar);
         menuBar.add(menu);
         MenuItem item1=new MenuItem("Save");
+        item1.setFont(new Font("deafult", Font.BOLD,12));
         item1.addActionListener(this);
         menu.add(item1);
         this.addMouseListener(this);
@@ -45,19 +51,9 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String str = e.getActionCommand();
-        Graph_Algo algoGraph = new Graph_Algo();
-        algoGraph.init(graph);
-        if (str.equals("Save")) {
-            try {
-                algoGraph.save("file.txt");
-                JOptionPane.showMessageDialog(this, "Graph saved to file.txt", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
 
-            } catch (Exception ex) {
-                System.out.println(ex.getCause());
-                JOptionPane.showMessageDialog(this, "Eror bla bla", "ERROR", JOptionPane.ERROR_MESSAGE);
-            }
-        }
+        String str = e.getActionCommand();
+        if (str.equals("Save")) saveGraph();
     }
     public void paint(Graphics g)
     {
@@ -69,7 +65,6 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
             double y = rand.nextInt((int)(this.getHeight()/1.5))+70;
             Point3D p = new Point3D(x, y);
             node.setLocation(p);
-            System.out.println(p.toString());
             g.fillOval( node.getLocation().ix(), node.getLocation().iy(), NODE_WIDTH_HEIGHT, NODE_WIDTH_HEIGHT);
             String id=node.getKey()+"";
             g.setFont(new Font("deafult", Font.BOLD,14));
@@ -91,10 +86,29 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
                    int d_x=(((((mid_x+dst.getLocation().ix())/2)+dst.getLocation().ix())/2)+dst.getLocation().ix())/2;
                    int d_y=(((((mid_y+dst.getLocation().iy())/2)+dst.getLocation().iy())/2)+dst.getLocation().iy())/2;
 
-                   g.fillOval(d_x-3,d_y-3,10,10);
+                   g.fillOval(d_x-3,d_y-3,NODE_WIDTH_HEIGHT,NODE_WIDTH_HEIGHT);
                 }
             }
             }
+        }
+
+        private void saveGraph()
+        {
+            Graph_Algo algoGraph = new Graph_Algo();
+            algoGraph.init(graph);
+                    FileDialog fd = new FileDialog(this, "Open text file", FileDialog.SAVE);
+                    fd.setFile("*.txt");
+                    fd.setFilenameFilter(new FilenameFilter() {
+                        @Override
+                        public boolean accept(File dir, String name) {
+                            return name.endsWith(".txt");
+                        }
+                    });
+                    fd.setVisible(true);
+                    algoGraph.save(fd.getDirectory()+fd.getFile());
+                    JOptionPane.showMessageDialog(this, "Graph saved to "+fd.getFile(), "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+
+
         }
 
     @Override
@@ -105,7 +119,6 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.println(this.getLocation().toString());
 
     }
 
@@ -124,7 +137,7 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
 
     }
     public static void main(String[] args) {
-        DGraph g2 = new DGraph(4);
+        DGraph g2 = new DGraph(50);
         g2.connect(0, 1, 10);
         g2.connect(1, 2, 20);
         g2.connect(2, 4, 30);
