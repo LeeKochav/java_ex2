@@ -5,7 +5,6 @@ import dataStructure.DGraph;
 import dataStructure.edge_data;
 import dataStructure.graph;
 import dataStructure.node_data;
-import sun.font.Font2D;
 import utils.Point3D;
 
 
@@ -13,14 +12,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FilenameFilter;
-import java.io.IOException;
 import java.util.Random;
 
-public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
+public class Graph_GUI extends JFrame implements ActionListener{
 
     private graph graph;
     private Graph_Algo algoGraph;
@@ -33,7 +29,7 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
     }
 
     private void initGui(int width, int height) {
-       this.setSize(width,height);
+       this.setBounds(200,0,width,height);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Graph_GUI");
         MenuBar menuBar=new MenuBar();
@@ -45,7 +41,6 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
         item1.setFont(new Font("deafult", Font.BOLD,12));
         item1.addActionListener(this);
         menu.add(item1);
-        this.addMouseListener(this);
         this.setVisible(true);
     }
 
@@ -111,31 +106,6 @@ public class Graph_GUI extends JFrame implements ActionListener, MouseListener{
 
         }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
     public static void main(String[] args) {
         DGraph g2 = new DGraph(50);
         g2.connect(0, 1, 10);
