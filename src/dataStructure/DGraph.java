@@ -80,7 +80,7 @@ public class DGraph implements graph , Serializable {
 			numVer--;
 			change--;
 			if(this.edges.get(key)!=null) {
-				numEdg-=this.edges.get(key).values().size();
+				numEdg-=this.edges.get(key).size();
 				this.edges.remove(key);
 			}
 			for (LinkedHashMap<Integer, edge_data> tmp : this.edges.values()) {
