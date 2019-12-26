@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/dataStructure/DGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/dataStructure/DGraph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/dataStructure/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/dataStructure/Edge.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ex2/dataStructure/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/dataStructure/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataStructure/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Edge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataStructure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Node.java" afterDir="false" />
@@ -72,33 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Graph_GUI">
-    <configuration name="Graph_Algo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="algorithms.Graph_Algo" />
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="algorithms.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Graph_GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.Graph_GUI" />
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DGraphTest.connect">
     <configuration name="DGraphTest.connect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -110,6 +83,22 @@
       <option name="PACKAGE_NAME" value="dataStructure" />
       <option name="MAIN_CLASS_NAME" value="dataStructure.DGraphTest" />
       <option name="METHOD_NAME" value="connect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DGraphTest.edgeSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dataStructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dataStructure" />
+      <option name="MAIN_CLASS_NAME" value="dataStructure.DGraphTest" />
+      <option name="METHOD_NAME" value="edgeSize" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,13 +136,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DGraphTest.removeEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dataStructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dataStructure" />
+      <option name="MAIN_CLASS_NAME" value="dataStructure.DGraphTest" />
+      <option name="METHOD_NAME" value="removeEdge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Graph_GUI" />
-        <item itemvalue="Application.Graph_Algo" />
         <item itemvalue="JUnit.DGraphTest.connect" />
         <item itemvalue="JUnit.DGraphTest.getNode" />
         <item itemvalue="JUnit.DGraphTest.getEdge" />
+        <item itemvalue="JUnit.DGraphTest.edgeSize" />
+        <item itemvalue="JUnit.DGraphTest.removeEdge" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +178,7 @@
       <workItem from="1577033857162" duration="2854000" />
       <workItem from="1577086830723" duration="12659000" />
       <workItem from="1577272765145" duration="5338000" />
-      <workItem from="1577354910454" duration="14611000" />
+      <workItem from="1577354910454" duration="985000" />
     </task>
     <servers />
   </component>

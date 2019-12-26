@@ -26,9 +26,16 @@ public class Graph_GUI extends JFrame implements ActionListener {
 
     public Graph_GUI(graph g)  {
         this.graph=g;
+       algoGraph = new Graph_Algo();
         mc=g.getMC();
-        System.out.println(mc);
         initGui(1000, 1000);
+    }
+    public Graph_GUI()
+    {
+        this.graph=new DGraph();
+        algoGraph=new Graph_Algo();
+        mc=0;
+        initGui(1000,1000);
     }
 
     private void initGui(int width, int height)  {
@@ -37,13 +44,24 @@ public class Graph_GUI extends JFrame implements ActionListener {
         this.setTitle("Graph_GUI");
         MenuBar menuBar=new MenuBar();
         Menu menu=new Menu("File");
+        Menu menu2=new Menu("Algorithms");
         menu.setFont(new Font("deafult", Font.BOLD,12));
+        menu2.setFont(new Font("deafult", Font.BOLD,12));
         this.setMenuBar(menuBar);
         menuBar.add(menu);
+        menuBar.add(menu2);
+        MenuItem itemAlgo1=new MenuItem("ShortestPathDist");
+        itemAlgo1.setFont(new Font("deafult", Font.BOLD,12));
+        itemAlgo1.addActionListener(this);
         MenuItem item1=new MenuItem("Save");
         item1.setFont(new Font("deafult", Font.BOLD,12));
         item1.addActionListener(this);
         menu.add(item1);
+        menu2.add(itemAlgo1);
+        MenuItem item2=new MenuItem("Load");
+        item2.setFont(new Font("deafult", Font.BOLD,12));
+        item2.addActionListener(this);
+        menu.add(item2);
         setlocations();
         this.setVisible(true);
         Thread t=new Thread(new Runnable() {
@@ -66,6 +84,8 @@ public class Graph_GUI extends JFrame implements ActionListener {
 
         String str = e.getActionCommand();
         if (str.equals("Save")) saveGraph();
+        else if(str.equals("Load")) loadGraph();
+        else if(str.equals("ShortestPathDist")) ShortestPathDistCalc();
     }
     public void paint(Graphics g)
     {
@@ -101,9 +121,8 @@ public class Graph_GUI extends JFrame implements ActionListener {
 
         private void saveGraph()
         {
-            Graph_Algo algoGraph = new Graph_Algo();
             algoGraph.init(graph);
-                    FileDialog fd = new FileDialog(this, "Open text file", FileDialog.SAVE);
+                    FileDialog fd = new FileDialog(this, "Save graph", FileDialog.SAVE);
                     fd.setFile("*.txt");
                     fd.setFilenameFilter(new FilenameFilter() {
                         @Override
@@ -112,9 +131,66 @@ public class Graph_GUI extends JFrame implements ActionListener {
                         }
                     });
                     fd.setVisible(true);
-                    algoGraph.save(fd.getDirectory()+fd.getFile());
-                    JOptionPane.showMessageDialog(this, "Graph saved to "+fd.getFile(), "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+                    if(fd.getDirectory()!=null&&fd.getFile()!=null) {
+                        algoGraph.save(fd.getDirectory() + fd.getFile());
+                        JOptionPane.showMessageDialog(this, "Graph saved to " + fd.getFile(), "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(this, "File did not saved" , "ERROR", JOptionPane.ERROR_MESSAGE);
 
+                    }
+        }
+        private void loadGraph()
+        {
+            algoGraph.init(graph);
+            FileDialog fd = new FileDialog(this, "Open text file", FileDialog.LOAD);
+            fd.setFile("*.txt");
+            fd.setFilenameFilter(new FilenameFilter() {
+                @Override
+                public boolean accept(File dir, String name) {
+                    return name.endsWith(".txt");
+                }
+            });
+            fd.setVisible(true);
+                algoGraph.init(fd.getDirectory() + fd.getFile());
+                this.graph = algoGraph.copy();
+                repaint();
+        }
+        private void ShortestPathDistCalc()
+        {
+            algoGraph.init(graph);
+            JFrame j=new JFrame();
+            j.setBounds(500,0,300,300);
+            j.setLayout(new FlowLayout());
+            j.setTitle("ShortestPathDistCalc");
+            JButton send=new JButton("Submit");
+            JTextField t1=new JTextField("Src",25);
+            JTextField t2=new JTextField("Dst",25);
+            j.add(t1);
+            j.add(t2);
+            j.add(send);
+            j.setVisible(true);
+            send.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int src=Integer.parseInt(t1.getText());
+                    int dst=Integer.parseInt(t2.getText());
+                    try {
+                        double path = algoGraph.shortestPathDist(src, dst);
+                        JOptionPane.showMessageDialog(j, "shortestPathDist is: " + path, "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    catch (RuntimeException ex)
+                    {
+                        JOptionPane.showMessageDialog(j, "shortestPathDist is: " + ex.getMessage(), "INFORMATION", JOptionPane.ERROR_MESSAGE);
+
+                    }
+                    finally {
+
+                        j.setVisible(false);
+                    }
+                }
+            });
 
         }
     public void setlocations() {
@@ -127,7 +203,7 @@ public class Graph_GUI extends JFrame implements ActionListener {
         }
     }
     public static void main(String[] args) throws InterruptedException {
-        DGraph g2 = new DGraph(50);
+        DGraph g2 = new DGraph(4);
         g2.connect(0, 1, 10);
         g2.connect(1, 2, 20);
         g2.connect(2, 4, 30);

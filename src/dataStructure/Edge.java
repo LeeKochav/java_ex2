@@ -36,7 +36,8 @@ public class Edge implements edge_data, Serializable {
 
     @Override
     public String getInfo() {
-        return new String("[src:"+this.src.toString()+" ,dst:"+this.dst.toString()+ ", weight:"+this.weight+"]");
+        return this.info;
+       // return new String("[src:"+this.src.toString()+" ,dst:"+this.dst.toString()+ ", weight:"+this.weight+"]");
     }
     @Override
     public String toString()

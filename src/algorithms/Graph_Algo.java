@@ -137,31 +137,65 @@ public class Graph_Algo implements graph_algorithms {
 	}
 
 
+//	@Override
+//	public List<node_data> TSP(List<Integer> targets) {
+//		LinkedList<node_data> res=new LinkedList<node_data>();
+//		for(int i=0; i<targets.size(); i++) {
+//			for (node_data n: graphAlgo.getV()) {
+//				n.setTag(1);
+//			}
+//			node_data srcCur = graphAlgo.getNode(targets.get(i)); //try
+//			srcCur.setTag(3);
+//			res.add(srcCur);
+//			while(graphAlgo.getE(srcCur.getKey()).size()>0)
+//			{
+//				node_data next=null;
+//				for (edge_data edge:graphAlgo.getE(srcCur.getKey())) {
+//					next=graphAlgo.getNode(edge.getDest());
+//					edge.setTag(3);
+//					if(next.getTag()==3)
+//						break;
+//				}
+//				if(next!=null) {
+//					res.add(next);
+//				}
+//
+//			}
+//
+//		}
+//	}
+
+
+
+
+
+
 	@Override
 	public List<node_data> TSP(List<Integer> targets) {
-		/*
+			/*
 		Since nodes IDS are increase by 1, when creating a new node, source always will be zero.
 		 */
 		Collections.sort(targets);
 		LinkedList<node_data> ans=new LinkedList<node_data>();
-		ans.add(graphAlgo.getNode(0));
-		List<node_data> tmp=null;
-		int src=0;
-		for(int i=0; i<targets.size(); i++) {
-			int dst = targets.get(i);
-			if(!ans.contains(graphAlgo.getNode(dst)))
-			{
-				tmp = shortestPath(src, dst);
-				if (tmp == null) return null;
-				tmp.remove(graphAlgo.getNode(src));
-				ans.addAll(tmp);
-				src = dst;
+		for(int j=0; j<targets.size(); j++) {
+			ans.add(graphAlgo.getNode(targets.get(j)));
+			List<node_data> tmp = null;
+			int src = j;
+			for (int i = 1; i < targets.size(); i++) {
+				int dst = targets.get(i);
+				if (!ans.contains(graphAlgo.getNode(dst))) {
+					tmp = shortestPath(src, dst);
+					if (tmp == null)  ans.clear();
+					else {
+						tmp.remove(graphAlgo.getNode(src));
+						ans.addAll(tmp);
+					}
+					src = dst;
+				}
 			}
 		}
-
 		return ans;
 	}
-
 
 	@Override
 	public graph copy() {
@@ -216,6 +250,7 @@ public class Graph_Algo implements graph_algorithms {
 		TMP.add(1);
 		TMP.add(4);
 		TMP.add(5);
+		System.out.println(TMP);
 		//TMP.add(5);
 		System.out.println(algo.TSP(TMP));
 

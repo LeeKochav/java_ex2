@@ -32,11 +32,13 @@ public class DGraph implements graph , Serializable {
 
 	@Override
 	public edge_data getEdge(int src, int dest) {
+		if(this.edges.get(src)==null)return null;
 		return this.edges.get(src).get(dest);
 	}
 
 	@Override
 	public void addNode(node_data n) {
+		if(n==null) throw new RuntimeException("Invalid input");
 		this.vertices.put(n.getKey(),n);
 		numVer++;
 		change++;
@@ -58,6 +60,10 @@ public class DGraph implements graph , Serializable {
 			this.edges.put(src, newConnection);
 			numEdg++;
 			change++;
+		}
+		else
+		{
+			throw new RuntimeException("Invalid vertices input");
 		}
 	}
 

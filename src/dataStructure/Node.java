@@ -28,6 +28,7 @@ public class Node implements node_data, Serializable {
         setWeight(n.getWeight());
         setTag(n.getTag());
         setInfo(n.getInfo());
+        setLocation(n.getLocation());
     }
 
 
