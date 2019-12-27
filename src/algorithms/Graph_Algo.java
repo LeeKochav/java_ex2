@@ -15,16 +15,11 @@ import dataStructure.*;
 public class Graph_Algo implements graph_algorithms {
 
 	private static final VER_COMP comp = new VER_COMP();
-	private graph graphAlgo;
-
-	public void Graph_Algo()
-	{
-		this.graphAlgo=new DGraph();
-	}
+	private graph graph;
 
 	@Override
 	public void init(graph g) {
-		this.graphAlgo = g;
+		this.graph = g;
 	}
 
 	@Override
@@ -34,7 +29,7 @@ public class Graph_Algo implements graph_algorithms {
 			FileInputStream file = new FileInputStream(file_name);
 			ObjectInputStream in = new ObjectInputStream(file);
 
-			this.graphAlgo = (graph) in.readObject();
+			this.graph = (graph) in.readObject();
 
 			in.close();
 			file.close();
@@ -52,7 +47,7 @@ public class Graph_Algo implements graph_algorithms {
 			FileOutputStream file = new FileOutputStream(file_name);
 			ObjectOutputStream out = new ObjectOutputStream(file);
 
-			out.writeObject(this.graphAlgo);
+			out.writeObject(this.graph);
 
 			out.close();
 			file.close();
@@ -65,10 +60,10 @@ public class Graph_Algo implements graph_algorithms {
 
 	@Override
 	public boolean isConnected() {
-		if(this.graphAlgo==null) return false;
-		else if(this.graphAlgo.getV().size()==0) return false;
-		for (node_data nodeSrc: this.graphAlgo.getV()) {
-			for (node_data nodeDst: this.graphAlgo.getV()) {
+		if(this.graph ==null) return false;
+		else if(this.graph.getV().size()==0) return false;
+		for (node_data nodeSrc: this.graph.getV()) {
+			for (node_data nodeDst: this.graph.getV()) {
 				if (shortestPathDist(nodeSrc.getKey(), nodeDst.getKey()) == Double.MAX_VALUE)
 					return false;
 				if (shortestPathDist(nodeDst.getKey(), nodeSrc.getKey()) == Double.MAX_VALUE)
@@ -84,10 +79,10 @@ public class Graph_Algo implements graph_algorithms {
 	@Override
 	public double shortestPathDist(int src, int dest) {
 		try {
-		node_data srC=this.graphAlgo.getNode(src);
-		node_data dsT=this.graphAlgo.getNode(dest);
-			Collection<node_data> vertices = this.graphAlgo.getV();
-			PriorityBlockingQueue<node_data> q = new PriorityBlockingQueue<>(this.graphAlgo.nodeSize(), new VER_COMP());
+		node_data srC=this.graph.getNode(src);
+		node_data dsT=this.graph.getNode(dest);
+			Collection<node_data> vertices = this.graph.getV();
+			PriorityBlockingQueue<node_data> q = new PriorityBlockingQueue<>(this.graph.nodeSize(), new VER_COMP());
 			for (node_data node : vertices) {
 				if (node.getKey() == src) {
 					node.setWeight(0);
@@ -99,16 +94,16 @@ public class Graph_Algo implements graph_algorithms {
 			}
 			while (!q.isEmpty() && dsT.getTag() != 3) {
 				node_data tmp_src = q.poll();
-				Collection<edge_data> edgesTmp = this.graphAlgo.getE(tmp_src.getKey());
+				Collection<edge_data> edgesTmp = this.graph.getE(tmp_src.getKey());
 				if (edgesTmp != null) {
 					for (edge_data edge : edgesTmp) {
-						node_data tmp_dst = this.graphAlgo.getNode(edge.getDest());
+						node_data tmp_dst = this.graph.getNode(edge.getDest());
 						if (tmp_dst.getTag() != 3) {
 							double tmp_w = tmp_src.getWeight() + edge.getWeight();
 							if (tmp_dst.getWeight() > tmp_w) {
 								tmp_dst.setWeight(tmp_w);
 								tmp_dst.setInfo(tmp_src.getKey() + "");
-								PriorityBlockingQueue<node_data> tmp_q = new PriorityBlockingQueue<>(this.graphAlgo.nodeSize(), new VER_COMP());
+								PriorityBlockingQueue<node_data> tmp_q = new PriorityBlockingQueue<>(this.graph.nodeSize(), new VER_COMP());
 								while (!q.isEmpty()) {
 									tmp_q.add(q.poll());
 								}
@@ -132,15 +127,15 @@ public class Graph_Algo implements graph_algorithms {
 		shortestPathDist(src,dest);
 		LinkedList<node_data> res=new LinkedList<>();
 		int t=dest;
-		while(this.graphAlgo.getNode(t).getKey()!=src)
+		while(this.graph.getNode(t).getKey()!=src)
 		{
-			if(this.graphAlgo.getNode(t).getInfo()==null)
+			if(this.graph.getNode(t).getInfo()==null)
 				return null;
-			int next=Integer.parseInt(this.graphAlgo.getNode(t).getInfo());
-			res.add(this.graphAlgo.getNode(next));
+			int next=Integer.parseInt(this.graph.getNode(t).getInfo());
+			res.add(this.graph.getNode(next));
 			t=next;
 		}
-		res.add(this.graphAlgo.getNode(dest));
+		res.add(this.graph.getNode(dest));
 		res.sort(comp);
 		return res;
 
@@ -159,8 +154,8 @@ public class Graph_Algo implements graph_algorithms {
 			tmp= (LinkedList<node_data>) shortestPath(targets.get(i),targets.get(i+1));
 			if(tmp==null) return null;
 
-			else if (tmp.size() > 1 && res.contains(graphAlgo.getNode(targets.get(i))))
-				tmp.remove(graphAlgo.getNode(targets.get(i)));
+			else if (tmp.size() > 1 && res.contains(graph.getNode(targets.get(i))))
+				tmp.remove(graph.getNode(targets.get(i)));
 
 			res.addAll(tmp);
 		}
@@ -173,11 +168,11 @@ public class Graph_Algo implements graph_algorithms {
 	@Override
 	public graph copy() {
 		graph g = new DGraph();
-		Collection<node_data> vertices = this.graphAlgo.getV();
+		Collection<node_data> vertices = this.graph.getV();
 		for (node_data n : vertices)
 			g.addNode(new Node(n));
 		for (node_data n : vertices) {
-			Collection<edge_data> edges = this.graphAlgo.getE(n.getKey());
+			Collection<edge_data> edges = this.graph.getE(n.getKey());
 			if(edges!=null) {
 				for (edge_data e : edges) {
 					g.connect(e.getSrc(), e.getDest(), e.getWeight());
@@ -227,8 +222,8 @@ public class Graph_Algo implements graph_algorithms {
 //		g2.connect(2, 3, 1);
 //		g2.connect(3, 0, 2);
 //		algo.init(g2);
-//		algo.save("file.txt");
-//		algo2.init("file.txt");
+//		algo.save("test.txt");
+//		algo2.init("test.txt");
 //		algo2.print();
 		//System.out.println(algo.isConnected());
 		Graph_Algo algo2 = new Graph_Algo();

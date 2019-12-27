@@ -321,6 +321,11 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
             int src=Integer.parseInt(str_src);
             int dst=Integer.parseInt(str_dst);
             double path=algoGraph.shortestPathDist(src,dst);
+            if(path==Double.MAX_VALUE)
+            {
+                JOptionPane.showMessageDialog(this, "The shortest path distance does not exist ", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
             JOptionPane.showMessageDialog(this, "The shortest path distance is: " + path, "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
         }
         catch (Exception ex)
@@ -446,19 +451,19 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
 //        g2.connect(4, 2, 40);
 //        g2.connect(2, 3, 1);
 
-//        DGraph g = new DGraph(6);
-//        g.connect(0, 5, 10);
-//        g.connect(0, 2, 20);
-//        g.connect(5, 1, 25);
-//        g.connect(5, 3, 7);
-//        g.connect(2, 3, 30);
-//        g.connect(1, 4, 4);
-//        g.connect(3, 4, 2);
-//        g.connect(1,6,1);
-//      //  g.connect(4,6,3);
-//        //   g2.connect(3, 0, 2);
-//        Graph_GUI gu=new Graph_GUI(g);
-        Graph_GUI g=new Graph_GUI();
+        DGraph g = new DGraph(6);
+        g.connect(0, 5, 10);
+        g.connect(0, 2, 20);
+        g.connect(5, 1, 25);
+        g.connect(5, 3, 7);
+        g.connect(2, 3, 30);
+        g.connect(1, 4, 4);
+        g.connect(3, 4, 2);
+        g.connect(1,6,1);
+        g.connect(4,6,3);
+           //g2.connect(3, 0, 2);
+        Graph_GUI gu=new Graph_GUI(g);
+  //      Graph_GUI g=new Graph_GUI();
 
 //        Thread.sleep(1000);
 //        g2.removeNode(4);

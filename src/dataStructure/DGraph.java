@@ -69,7 +69,6 @@ public class DGraph implements graph , Serializable {
 
 	@Override
 	public Collection<node_data> getV() {
-		if(this.nodes==null) return null;
 		return this.nodes.values();
 	}
 
@@ -164,5 +163,7 @@ public class DGraph implements graph , Serializable {
 		System.out.println(g.edgeSize());
 		//g.removeEdge(2,3);
 		//g.print();
+		DGraph g8=null;
+		System.out.println(g8.getV());
 	}
 }
