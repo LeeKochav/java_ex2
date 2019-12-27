@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="013f0542-9e4d-4cb8-b6e7-a753f683516b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ex2Testing/algorithms/Graph_AlgoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/Ex2/algorithms/Graph_AlgoTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitigonre" beforeDir="false" afterPath="$PROJECT_DIR$/.gitigonre" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex2Testing/dataStructure/DGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ex2Testing/dataStructure/DGraphTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/dataStructure/DGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/dataStructure/DGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Ex2/dataStructure/DGraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Ex2/dataStructure/DGraphTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Graph_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Graph_GUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +174,7 @@
       <workItem from="1577272765145" duration="5338000" />
       <workItem from="1577354910454" duration="14611000" />
       <workItem from="1577382368079" duration="3276000" />
-      <workItem from="1577434166992" duration="21965000" />
+      <workItem from="1577434166992" duration="22128000" />
     </task>
     <servers />
   </component>
@@ -205,16 +193,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dataStructure/DGraph.java</url>
-          <line>157</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -138,32 +138,4 @@ public class DGraph implements graph , Serializable {
 		return this.change;
 	}
 
-
-	public static void main(String[] args) {
-		Node n1=new Node();
-		Node n2=new Node();
-		Node n3=new Node();
-		Node n4=new Node();
-		DGraph g=new DGraph();
-		g.addNode(n1);
-		g.addNode(n2);
-		g.addNode(n3);
-		g.addNode(n4);
-		g.connect(n1.getKey(),n2.getKey(),10);
-		g.connect(n1.getKey(),n3.getKey(),10);
-		g.connect(n2.getKey(),n3.getKey(),1);
-		g.print();
-		System.out.println(g.nodeSize());
-		System.out.println(g.edgeSize());
-		g.removeEdge(2,4);
-		System.out.println("***********");
-		g.print();
-		System.out.println(g.getV().toString());
-		System.out.println(g.nodeSize());
-		System.out.println(g.edgeSize());
-		//g.removeEdge(2,3);
-		//g.print();
-		DGraph g8=null;
-		System.out.println(g8.getV());
-	}
 }
