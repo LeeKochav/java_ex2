@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 
 public class DGraph implements graph , Serializable {
 
-	private LinkedHashMap<Integer,node_data> vertices;
+	private LinkedHashMap<Integer,node_data> nodes;
 	private LinkedHashMap<Integer,LinkedHashMap<Integer,edge_data>> edges;
 	private int numVer=0;
 	private int numEdg=0;
@@ -14,7 +14,7 @@ public class DGraph implements graph , Serializable {
 
 	public DGraph()
 	{
-		vertices =new LinkedHashMap<>();
+		nodes =new LinkedHashMap<>();
 		edges=new LinkedHashMap<>();
 	}
 	public DGraph(int num) {
@@ -27,7 +27,7 @@ public class DGraph implements graph , Serializable {
 
 	@Override
 	public node_data getNode(int key) {
-		return this.vertices.get(key);
+		return this.nodes.get(key);
 	}
 
 	@Override
@@ -39,15 +39,15 @@ public class DGraph implements graph , Serializable {
 	@Override
 	public void addNode(node_data n) {
 		if(n==null) throw new RuntimeException("Invalid input");
-		this.vertices.put(n.getKey(),n);
+		this.nodes.put(n.getKey(),n);
 		numVer++;
 		change++;
 	}
 
 	@Override
 	public void connect(int src, int dest, double w) {
-		node_data s=this.vertices.get(src);
-		node_data d=this.vertices.get(dest);
+		node_data s=this.nodes.get(src);
+		node_data d=this.nodes.get(dest);
 		if(s!=null&&d!=null) {
 			edge_data edge = new Edge(s, d, w);
 			LinkedHashMap<Integer, edge_data> newConnection;
@@ -63,13 +63,14 @@ public class DGraph implements graph , Serializable {
 		}
 		else
 		{
-			throw new RuntimeException("Invalid vertices input");
+			throw new RuntimeException("Invalid source and destination nodes input");
 		}
 	}
 
 	@Override
 	public Collection<node_data> getV() {
-		return this.vertices.values();
+		if(this.nodes==null) return null;
+		return this.nodes.values();
 	}
 
 	@Override
@@ -81,7 +82,7 @@ public class DGraph implements graph , Serializable {
 
 	@Override
 	public node_data removeNode(int key) {
-		node_data rm=this.vertices.remove(key);
+		node_data rm=this.nodes.remove(key);
 		if(rm!=null) {
 			numVer--;
 			change--;

@@ -63,7 +63,7 @@ public class Node implements node_data, Serializable {
     }
 
     @Override
-    public String toString()  {return new String("Node"+this.key+" location:"+this.getLocation().toString()+" parent:"+this.getInfo());}
+    public String toString()  {return new String("Node"+this.key);}
 
     @Override
     public void setInfo(String s) {
