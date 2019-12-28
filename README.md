@@ -46,23 +46,23 @@ Algorithm implementation is based on Dijkstra's algorithm:
 This class represent a graphic interface of a graph. For drawing functions on graph we used JFRAM based on swing and awt Libraries. 
 Operations that are applicable on it including:
 
-	### File
-		- save
-		- load
+### File
+- save
+- load
 		
-	### Algorithms
-		- isConnected
-		- shortestPathDist
-		- shortestPath
-		- TSP	
+### Algorithms
+- isConnected
+- shortestPathDist
+- shortestPath
+- TSP	
 		
-	### Add/Remove Node
-		- addNode
-		- removeNode
+### Add/Remove Node
+- addNode
+- removeNode
 		
-	### Add/Remove Edge
-		- connect\addEdge
-		- removeEdge
+### Add/Remove Edge
+- connect\addEdge
+- removeEdge
 		
 ## Relevant files for testing 
 - test.txt
