@@ -74,7 +74,7 @@ public class Graph_Algo implements graph_algorithms {
 	}
 
 	/*
-	Shortest path algorithm using Dijkstra
+	Implementation of shortest path is based on Dijkstra algorithm.
 	 */
 	@Override
 	public double shortestPathDist(int src, int dest) {
@@ -92,7 +92,7 @@ public class Graph_Algo implements graph_algorithms {
 				node.setTag(1);
 				q.add(node);
 			}
-			while (!q.isEmpty() && dsT.getTag() != 3) {
+			while (!q.isEmpty() && dsT.getTag() != 3) { // tag=3 means visited
 				node_data tmp_src = q.poll();
 				Collection<edge_data> edgesTmp = this.graph.getE(tmp_src.getKey());
 				if (edgesTmp != null) {
@@ -102,7 +102,8 @@ public class Graph_Algo implements graph_algorithms {
 							double tmp_w = tmp_src.getWeight() + edge.getWeight();
 							if (tmp_dst.getWeight() > tmp_w) {
 								tmp_dst.setWeight(tmp_w);
-								tmp_dst.setInfo(tmp_src.getKey() + "");
+								tmp_dst.setInfo(tmp_src.getKey() + "");	//set the parent of the node
+								//decrease key :
 								PriorityBlockingQueue<node_data> tmp_q = new PriorityBlockingQueue<>(this.graph.nodeSize(), new VER_COMP());
 								while (!q.isEmpty()) {
 									tmp_q.add(q.poll());
@@ -124,7 +125,14 @@ public class Graph_Algo implements graph_algorithms {
 
 	@Override
 	public List<node_data> shortestPath(int src, int dest) {
-		shortestPathDist(src,dest);
+		try {
+			shortestPathDist(src, dest);
+		}
+		catch(RuntimeException e)
+		{
+			System.out.println(e.getMessage());
+			return null;
+		}
 		LinkedList<node_data> res=new LinkedList<>();
 		int t=dest;
 		while(this.graph.getNode(t).getKey()!=src)
@@ -151,7 +159,14 @@ public class Graph_Algo implements graph_algorithms {
 		LinkedList<node_data> tmp;
 		for(int i=0; i<targets.size()-1; i++)
 		{
-			tmp= (LinkedList<node_data>) shortestPath(targets.get(i),targets.get(i+1));
+			try {
+				tmp = (LinkedList<node_data>) shortestPath(targets.get(i), targets.get(i + 1));
+			}
+			catch(RuntimeException e)
+			{
+				System.out.println(e.getMessage());
+				return null;
+			}
 			if(tmp==null) return null;
 
 			else if (tmp.size() > 1 && res.contains(graph.getNode(targets.get(i))))

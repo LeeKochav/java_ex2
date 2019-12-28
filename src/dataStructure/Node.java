@@ -22,6 +22,9 @@ public class Node implements node_data, Serializable {
         this.info=null;
         setLocation(new Point3D((double)this.getKey(),(double)this.getKey()));
     }
+    /*
+    Copy constructor
+     */
     public Node(node_data n)
     {
         this.key=n.getKey();
@@ -78,6 +81,10 @@ public class Node implements node_data, Serializable {
         return this.tag;
     }
 
+    /*
+    Temporal data (aka color: e,g, white, gray, black)
+    white=1, grey=2, black=3
+     */
     @Override
     public void setTag(int t) {
         this.tag=t;

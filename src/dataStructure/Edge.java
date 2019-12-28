@@ -54,11 +54,12 @@ public class Edge implements edge_data, Serializable {
         return this.tag;
     }
 
+    /*
+    Temporal data (aka color: e,g, white, gray, black)
+	white=1, grey=2, black=3
+     */
     @Override
     public void setTag(int t) {
-        if(t>=1&&t<=3) {
             this.tag = t;
-        }
-
     }
 }

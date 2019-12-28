@@ -29,6 +29,9 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         mc=g.getMC();
         initGui(1000, 1000);
     }
+    /*
+    Default constructor
+     */
     public Graph_GUI()
     {
         this.graph=new DGraph();
@@ -113,10 +116,10 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         menuBar.add(menu4);
 
 
-        setlocations();
+        setLocations();
         this.addMouseListener(this);
         this.setVisible(true);
-        Thread t=new Thread(new Runnable() {
+        Thread t=new Thread(new Runnable() { //repaint the graph gui using thread if there has been change in the graph
             @Override
             public void run() {
                 while(true) {
@@ -144,8 +147,8 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
                 loadGraph();
                 break;
             case "isConnected":
-                    isConnectedGui();
-                    break;
+                isConnectedGui();
+                break;
             case "ShortestPathDistance":
                 ShortestPathDistCalc();
                 break;
@@ -168,7 +171,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
                 removeEdgeGui();
                 break;
             default:
-                    break;
+                break;
         }
 
     }
@@ -195,6 +198,8 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
                     double dist = node.getLocation().distance2D(dst.getLocation());
                     g.drawString(weight, (int) ((node.getLocation().x() + dst.getLocation().x()) / 2), (int) ((node.getLocation().y() + dst.getLocation().y()) / 2));
                     g.setColor(Color.RED);
+
+                    //calculate the direction oval location
                     int mid_x = ((node.getLocation().ix() + dst.getLocation().ix()) / 2);
                     int mid_y = ((node.getLocation().iy() + dst.getLocation().iy()) / 2);
                     int d_x=(((((mid_x+dst.getLocation().ix())/2)+dst.getLocation().ix())/2)+dst.getLocation().ix())/2;
@@ -326,7 +331,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
                 JOptionPane.showMessageDialog(this, "The shortest path distance does not exist ", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
             }
             else
-            JOptionPane.showMessageDialog(this, "The shortest path distance is: " + path, "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "The shortest path distance is: " + path, "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
         }
         catch (Exception ex)
         {
@@ -404,7 +409,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         }
 
     }
-    public void setlocations() {
+    public void setLocations() {
         Random rand = new Random();
         for (node_data node : graph.getV()) {
             double x = rand.nextInt((int) (this.getWidth() / 1.5)) + 50;
@@ -414,15 +419,14 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         }
     }
 
-
     @Override
     public void mouseClicked(MouseEvent e) {
-            int x = e.getX();
-            int y = e.getY();
-            Point3D p = new Point3D(x, y);
-            node_data newNode = new Node();
-            newNode.setLocation(p);
-            graph.addNode(newNode);
+        int x = e.getX();
+        int y = e.getY();
+        Point3D p = new Point3D(x, y);
+        node_data newNode = new Node();
+        newNode.setLocation(p);
+        graph.addNode(newNode);
     }
 
     @Override
@@ -442,33 +446,6 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
     @Override
     public void mouseExited(MouseEvent e) {
 
-    }
-    public static void main(String[] args) throws InterruptedException {
-//        DGraph g2 = new DGraph(4);
-//        g2.connect(0, 1, 10);
-//        g2.connect(1, 2, 20);
-//        g2.connect(2, 4, 30);
-//        g2.connect(4, 2, 40);
-//        g2.connect(2, 3, 1);
-
-        DGraph g = new DGraph(6);
-        g.connect(0, 5, 10);
-        g.connect(0, 2, 20);
-        g.connect(5, 1, 25);
-        g.connect(5, 3, 7);
-        g.connect(2, 3, 30);
-        g.connect(1, 4, 4);
-        g.connect(3, 4, 2);
-        g.connect(1,6,1);
-        g.connect(4,6,3);
-           //g2.connect(3, 0, 2);
-        Graph_GUI gu=new Graph_GUI(g);
-  //      Graph_GUI g=new Graph_GUI();
-
-//        Thread.sleep(1000);
-//        g2.removeNode(4);
-//        Thread.sleep(1000);
-//        g2.removeNode(1);
     }
 
 }

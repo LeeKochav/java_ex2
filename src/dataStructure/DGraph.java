@@ -17,6 +17,9 @@ public class DGraph implements graph , Serializable {
 		nodes =new LinkedHashMap<>();
 		edges=new LinkedHashMap<>();
 	}
+	/*
+	Constructor for testing
+	 */
 	public DGraph(int num) {
 		this();
 		for (int i = 0; i <= num; i++) {
@@ -44,6 +47,10 @@ public class DGraph implements graph , Serializable {
 		change++;
 	}
 
+	/*
+	Connect if and only if both src and dest exist in graph, if src node did not have edges yet create new edges parameter otherwise, add the new edge.
+	In addition, update the change parameter for MC.
+	 */
 	@Override
 	public void connect(int src, int dest, double w) {
 		node_data s=this.nodes.get(src);
@@ -78,7 +85,9 @@ public class DGraph implements graph , Serializable {
 			return null;
 		return this.edges.get(node_id).values();
 	}
-
+	/*
+	Remove node, his edges and all the edges that this node is the dest node.
+	 */
 	@Override
 	public node_data removeNode(int key) {
 		node_data rm=this.nodes.remove(key);
@@ -119,18 +128,6 @@ public class DGraph implements graph , Serializable {
 	@Override
 	public int edgeSize() {
 		return this.numEdg;
-	}
-	public void print()
-	{
-
-		for(int keySrc:this.edges.keySet())
-		{
-			String ans="";
-			ans+= "src:Node"+keySrc+"\nEdges:\n";
-			ans += this.getE(keySrc).toString();
-			System.out.println(ans);
-			}
-
 	}
 
 	@Override
