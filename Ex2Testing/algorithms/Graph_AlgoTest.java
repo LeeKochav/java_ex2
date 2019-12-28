@@ -3,6 +3,7 @@ package algorithms;
 import com.sun.org.apache.xpath.internal.objects.XNodeSet;
 import dataStructure.DGraph;
 import dataStructure.graph;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
@@ -12,10 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Graph_AlgoTest {
 
-    Graph_Algo algo;
+   static Graph_Algo algo;
 
-    @BeforeEach
-    void initialize()
+    @BeforeAll
+    static void initialize()
     {
         DGraph g = new DGraph(6);
         algo=new Graph_Algo();
@@ -35,8 +36,8 @@ class Graph_AlgoTest {
     void init() {
         Graph_Algo algoTest=new Graph_Algo();
         graph graph=new DGraph(2);
-        graph.connect(0,1,10);
-        graph.connect(1,2,20);
+        graph.connect(7,8,10);
+        graph.connect(8,9,20);
         algoTest.init(graph);
     }
 
