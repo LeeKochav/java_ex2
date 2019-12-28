@@ -68,8 +68,8 @@ Operations that are applicable on it including:
 - test.txt
 
 ## External libraries
-junit-jupiter-api-5.4.0
-junit-platform-commons-1.4.0
+1. junit-jupiter-api-5.4.0
+2. junit-platform-commons-1.4.0
 
 
 More details can be found on Wiki
