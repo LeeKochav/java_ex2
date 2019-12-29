@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DGraphTest {
@@ -56,8 +58,9 @@ class DGraphTest {
     @Test
     void addNode() {
         Node n6 = new Node();
+        int size=g.nodeSize();
         g.addNode(n6);
-        assertEquals(g.getNode(6).getKey(), 6);
+        assertEquals(g.nodeSize(), size+1);
         try {
             g.addNode(null);
             fail("addNode function did not throw exception when node is null");
@@ -68,12 +71,10 @@ class DGraphTest {
 
     @Test
     void connect() {
-        Node n7 = new Node();
-        g.addNode(n7);
-        g.connect(1, 6, 1);
-        g.connect(4, 6, 3);
-        assertEquals(g.getEdge(1, 6).getWeight(), 1.0);
-        assertEquals(g.getEdge(4, 6).getWeight(), 3.0);
+        g.connect(4, 0, 3);
+        g.connect(1, 3, 88);
+        assertEquals(g.getEdge(4, 0).getWeight(), 3.0);
+        assertEquals(g.getEdge(1, 3).getWeight(), 88.0);
         try {
             g.connect(10, 20, 5);
             fail("Connect function did not throw exception when input is not valid");
@@ -127,19 +128,20 @@ class DGraphTest {
         assertEquals(g.edgeSize(), s);
     }
 
-//    @Test
-//    void performance() {
-//        assertTimeout(Duration.ofMillis(100000), () -> {
-//            int million = 1000000;
-//            DGraph d = new DGraph(million);
-//            for (node_data n : d.getV()) {
-//                for (int i = 1; i <= 10; i++) {
-//                    try {
-//                        d.connect(n.getKey(), n.getKey() + i, i * 5);
-//                    } catch (RuntimeException e) {
-//                    }
-//                }
-//            }
-//        });
-//    }
+    @Test
+    void performance() {
+        assertTimeout(Duration.ofMillis(10000), () -> {
+            int million = 1000000;
+            DGraph d = new DGraph(million);
+            for (node_data n : d.getV()) {
+                for (int i = 1; i <= 3; i++) {
+                    try {
+                        d.connect(n.getKey(), n.getKey() + i, i * 5);
+                    } catch (RuntimeException e) {
+                        continue;
+                    }
+                }
+            }
+        });
+    }
 }

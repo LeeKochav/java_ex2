@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="013f0542-9e4d-4cb8-b6e7-a753f683516b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/graph_screenshot.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/resources/graph_screenshot.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Graph_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Graph_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ex2Testing/dataStructure/DGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ex2Testing/dataStructure/DGraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/gui/Graph_GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Graph_Algo">
+  <component name="RunManager" selected="JUnit.DGraphTest">
     <configuration name="Graph_Algo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="algorithms.Graph_Algo" />
       <module name="Ex2" />
@@ -128,16 +128,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Graph_AlgoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dataStructure.*" />
+          <option name="PATTERN" value="algorithms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dataStructure" />
-      <option name="MAIN_CLASS_NAME" value="dataStructure.NodeTest" />
+      <option name="PACKAGE_NAME" value="algorithms" />
+      <option name="MAIN_CLASS_NAME" value="algorithms.Graph_AlgoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DGraphTest" />
+        <item itemvalue="JUnit.Graph_AlgoTest" />
         <item itemvalue="Application.Graph_Algo" />
         <item itemvalue="Application.Graph_GUI" />
         <item itemvalue="JUnit.EdgeTest" />
-        <item itemvalue="JUnit.NodeTest" />
-        <item itemvalue="JUnit.DGraphTest" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +172,8 @@
       <workItem from="1577354910454" duration="14611000" />
       <workItem from="1577382368079" duration="3276000" />
       <workItem from="1577434166992" duration="22763000" />
-      <workItem from="1577523081751" duration="8289000" />
+      <workItem from="1577523081751" duration="9009000" />
+      <workItem from="1577644540320" duration="243000" />
     </task>
     <servers />
   </component>
@@ -197,7 +198,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Ex2Testing/dataStructure/DGraphTest.java</url>
-          <line>61</line>
+          <line>64</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
