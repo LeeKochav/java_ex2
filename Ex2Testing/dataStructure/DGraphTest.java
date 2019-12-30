@@ -20,12 +20,12 @@ class DGraphTest {
 
     @BeforeAll
     static void init() {
-        n0 = new Node();
-        n1 = new Node();
-        n2 = new Node();
-        n3 = new Node();
-        n4 = new Node();
-        n5 = new Node();
+        n0 = new Node(0);
+        n1 = new Node(1);
+        n2 = new Node(2);
+        n3 = new Node(3);
+        n4 = new Node(4);
+        n5 = new Node(5);
         g = new DGraph();
         g.addNode(n0);
         g.addNode(n1);
@@ -57,7 +57,7 @@ class DGraphTest {
 
     @Test
     void addNode() {
-        Node n6 = new Node();
+        Node n6 = new Node(6);
         int size=g.nodeSize();
         g.addNode(n6);
         assertEquals(g.nodeSize(), size+1);
@@ -134,7 +134,7 @@ class DGraphTest {
             int million = 1000000;
             DGraph d = new DGraph(million);
             for (node_data n : d.getV()) {
-                for (int i = 1; i <= 3; i++) {
+                for (int i = 1; i <= 5; i++) {
                     try {
                         d.connect(n.getKey(), n.getKey() + i, i * 5);
                     } catch (RuntimeException e) {

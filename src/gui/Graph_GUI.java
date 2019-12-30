@@ -47,7 +47,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         MenuBar menuBar=new MenuBar();
         Menu menu=new Menu("File");
         Menu menu2=new Menu("Algorithms");
-        Menu menu3=new Menu("Add/Remove Node");
+        Menu menu3=new Menu("Remove Node");
         Menu menu4=new Menu("Add/Remove Edge");
 
         menu.setFont(new Font("deafult", Font.BOLD,12));
@@ -87,15 +87,10 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         menu.add(item1);
         menu.add(item2);
 
-        MenuItem itemNode1=new MenuItem("addNode");
-        itemNode1.setFont(new Font("deafult", Font.BOLD,12));
-        itemNode1.addActionListener(this);
-
         MenuItem itemNode2=new MenuItem("removeNode");
         itemNode2.setFont(new Font("deafult", Font.BOLD,12));
         itemNode2.addActionListener(this);
 
-        menu3.add(itemNode1);
         menu3.add(itemNode2);
 
         MenuItem itemEdge1=new MenuItem("Connect/addEdge");
@@ -157,9 +152,6 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
                 break;
             case "TSP":
                 ShortestPathDistTargetsList();
-                break;
-            case "addNode":
-                JOptionPane.showMessageDialog(this, "Please press on the GUI to set the new node location");
                 break;
             case "removeNode":
                 removeNodeGui();
@@ -302,7 +294,6 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
     }
     private void loadGraph()
     {
-        algoGraph.init(graph);
         FileDialog fd = new FileDialog(this, "Open text file", FileDialog.LOAD);
         fd.setFile("*.txt");
         fd.setFilenameFilter(new FilenameFilter() {
@@ -424,9 +415,17 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         int x = e.getX();
         int y = e.getY();
         Point3D p = new Point3D(x, y);
-        node_data newNode = new Node();
-        newNode.setLocation(p);
-        graph.addNode(newNode);
+        String str_key=JOptionPane.showInputDialog(this,"Please insert node key");
+        try {
+            int key=Integer.parseInt(str_key);
+            node_data newNode = new Node(key);
+            newNode.setLocation(p);
+            graph.addNode(newNode);
+        }
+        catch (Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, "ERROR: " + ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     @Override
@@ -445,6 +444,15 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
 
     @Override
     public void mouseExited(MouseEvent e) {
+
+    }
+
+    public static void main(String[] args)
+    {
+        DGraph d=new DGraph(3);
+        d.connect(0,1,2);
+        d.connect(1,2,3);
+        Graph_GUI t=new Graph_GUI(d);
 
     }
 

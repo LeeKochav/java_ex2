@@ -14,8 +14,8 @@ class NodeTest {
     @BeforeEach
      void init()
     {
-        n=new Node();
-        n1=new Node();
+        n=new Node(0);
+        n1=new Node(1);
     }
 
     @Test

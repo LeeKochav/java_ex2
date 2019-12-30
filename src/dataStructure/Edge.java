@@ -10,6 +10,8 @@ public class Edge implements edge_data, Serializable {
     private double weight;
     private String info;
 
+    public Edge(){}
+
     public Edge(node_data src,node_data dst ,double weight)
     {
         this.src=src;

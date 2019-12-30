@@ -23,7 +23,7 @@ public class DGraph implements graph , Serializable {
 	public DGraph(int num) {
 		this();
 		for (int i = 0; i <= num; i++) {
-			node_data new_node = new Node();
+			node_data new_node = new Node(i);
 			addNode(new_node);
 		}
 	}
@@ -42,9 +42,14 @@ public class DGraph implements graph , Serializable {
 	@Override
 	public void addNode(node_data n) {
 		if(n==null) throw new RuntimeException("Invalid input");
-		this.nodes.put(n.getKey(),n);
-		numVer++;
-		change++;
+		else {
+			if (this.nodes.containsKey(n.getKey()))
+				throw new RuntimeException("Invalid input, node already exist");
+				this.nodes.put(n.getKey(), n);
+				numVer++;
+				change++;
+
+			}
 	}
 
 	/*

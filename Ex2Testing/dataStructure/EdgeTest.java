@@ -16,9 +16,9 @@ class EdgeTest {
     @BeforeEach
     void init()
     {
-        n1=new Node();
-        n2=new Node();
-        n3=new Node();
+        n1=new Node(0);
+        n2=new Node(1);
+        n3=new Node(2);
         e=new Edge(n1,n2,10);
         e2=new Edge(n2,n3,20);
     }

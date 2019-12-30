@@ -30,7 +30,6 @@ public class Graph_Algo implements graph_algorithms {
 			ObjectInputStream in = new ObjectInputStream(file);
 
 			this.graph = (graph) in.readObject();
-
 			in.close();
 			file.close();
 		}

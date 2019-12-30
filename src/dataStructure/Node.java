@@ -11,12 +11,12 @@ public class Node implements node_data, Serializable {
     private String info;
     private int tag;
     private double weight;
-    static int id=0;
 
-    public Node()
+    public Node(){}
+
+    public Node(int key)
     {
-        this.key=id;
-        id++;
+        this.key=key;
         setWeight(Double.MAX_VALUE);
         setTag(1);
         this.info=null;

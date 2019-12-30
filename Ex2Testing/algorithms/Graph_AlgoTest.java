@@ -36,8 +36,8 @@ class Graph_AlgoTest {
     void init() {
         Graph_Algo algoTest=new Graph_Algo();
         graph graph=new DGraph(2);
-        graph.connect(7,8,10);
-        graph.connect(8,9,20);
+        graph.connect(0,1,10);
+        graph.connect(1,2,20);
         algoTest.init(graph);
     }
 
