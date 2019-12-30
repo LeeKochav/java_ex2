@@ -47,7 +47,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         MenuBar menuBar=new MenuBar();
         Menu menu=new Menu("File");
         Menu menu2=new Menu("Algorithms");
-        Menu menu3=new Menu("Remove Node");
+        Menu menu3=new Menu("Add/Remove Node");
         Menu menu4=new Menu("Add/Remove Edge");
 
         menu.setFont(new Font("deafult", Font.BOLD,12));
@@ -87,10 +87,15 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         menu.add(item1);
         menu.add(item2);
 
+        MenuItem itemNode1=new MenuItem("addNode");
+        itemNode1.setFont(new Font("deafult", Font.BOLD,12));
+        itemNode1.addActionListener(this);
+
         MenuItem itemNode2=new MenuItem("removeNode");
         itemNode2.setFont(new Font("deafult", Font.BOLD,12));
         itemNode2.addActionListener(this);
 
+        menu3.add(itemNode1);
         menu3.add(itemNode2);
 
         MenuItem itemEdge1=new MenuItem("Connect/addEdge");
@@ -152,6 +157,9 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
                 break;
             case "TSP":
                 ShortestPathDistTargetsList();
+                break;
+            case "addNode":
+                JOptionPane.showMessageDialog(this,"Press the gui to insert a new node");
                 break;
             case "removeNode":
                 removeNodeGui();
@@ -412,25 +420,26 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-        Point3D p = new Point3D(x, y);
-        String str_key=JOptionPane.showInputDialog(this,"Please insert node key");
-        try {
-            int key=Integer.parseInt(str_key);
-            node_data newNode = new Node(key);
-            newNode.setLocation(p);
-            graph.addNode(newNode);
-        }
-        catch (Exception ex)
-        {
-            JOptionPane.showMessageDialog(this, "ERROR: " + ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
+            String str_key = JOptionPane.showInputDialog(this, "Please insert node key");
+            int x = e.getX();
+            int y = e.getY();
+            Point3D p = new Point3D(x, y);
+            try {
+                int key = Integer.parseInt(str_key);
+                node_data newNode = new Node(key);
+                newNode.setLocation(p);
+                graph.addNode(newNode);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "ERROR: " + ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-    }
+
+        }
+
+
 
     @Override
     public void mouseReleased(MouseEvent e) {
