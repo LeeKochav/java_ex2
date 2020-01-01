@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.PriorityBlockingQueue;
 import dataStructure.*;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 
 /**
@@ -124,7 +125,8 @@ public class Graph_Algo implements graph_algorithms {
 		}
 		catch (RuntimeException error)
 		{
-			throw  new RuntimeException("Invalid input for source and destination");
+			System.out.println("Invalid input");
+			return Double.MAX_VALUE;
 		}
 	}
 

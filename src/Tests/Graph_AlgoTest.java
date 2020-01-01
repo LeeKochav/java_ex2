@@ -64,13 +64,7 @@ class Graph_AlgoTest {
         double path=algo.shortestPathDist(0,1);
         assertEquals(35,path);
         assertEquals(algo.shortestPathDist(5,2),Double.MAX_VALUE);
-        try {
             assertEquals(algo.shortestPathDist(20, 10), Double.MAX_VALUE);
-            fail("ShortestPathDist function did not catch exception ");
-        }
-        catch (RuntimeException e) {
-            System.out.println("ShortestPathDist function did catch exception: "+e.getMessage());
-        }
     }
 
     @Test

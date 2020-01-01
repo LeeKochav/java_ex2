@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="013f0542-9e4d-4cb8-b6e7-a753f683516b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/Ex2/Tests/EdgeTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Ex2/Tests/Graph_AlgoTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Ex2/Tests/NodeTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/Ex2/META-INF/Ex2.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitigonre" beforeDir="false" afterPath="$PROJECT_DIR$/.gitigonre" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ex2/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Ex2/algorithms/Graph_AlgoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Ex2/dataStructure/DGraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/Tests/DGraphTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Ex2/dataStructure/EdgeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Ex2/dataStructure/NodeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/Graph_AlgoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Graph_AlgoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,20 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Ex2Test">
-    <configuration name="Graph_GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.Graph_GUI" />
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.NodeTest">
     <configuration name="DGraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -127,6 +126,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Graph_AlgoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.Graph_AlgoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -144,9 +158,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Ex2Test" />
-        <item itemvalue="Application.Graph_GUI" />
         <item itemvalue="JUnit.NodeTest" />
+        <item itemvalue="JUnit.Graph_AlgoTest" />
+        <item itemvalue="JUnit.Ex2Test" />
         <item itemvalue="JUnit.EdgeTest" />
         <item itemvalue="JUnit.DGraphTest" />
       </list>
@@ -175,7 +189,7 @@
       <workItem from="1577644540320" duration="2055000" />
       <workItem from="1577649023873" duration="2704000" />
       <workItem from="1577652438241" duration="1297000" />
-      <workItem from="1577700922060" duration="10316000" />
+      <workItem from="1577700922060" duration="11100000" />
     </task>
     <servers />
   </component>
