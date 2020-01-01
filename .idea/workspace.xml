@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="013f0542-9e4d-4cb8-b6e7-a753f683516b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/Ex2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Ex2Test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Graph_AlgoTest">
+  <component name="RunManager" selected="JUnit.Ex2Test">
     <configuration name="DGraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -145,9 +146,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Ex2Test" />
         <item itemvalue="JUnit.Graph_AlgoTest" />
         <item itemvalue="JUnit.NodeTest" />
-        <item itemvalue="JUnit.Ex2Test" />
         <item itemvalue="JUnit.EdgeTest" />
         <item itemvalue="JUnit.DGraphTest" />
       </list>
@@ -176,7 +177,8 @@
       <workItem from="1577644540320" duration="2055000" />
       <workItem from="1577649023873" duration="2704000" />
       <workItem from="1577652438241" duration="1297000" />
-      <workItem from="1577700922060" duration="12343000" />
+      <workItem from="1577700922060" duration="12989000" />
+      <workItem from="1577898800252" duration="259000" />
     </task>
     <servers />
   </component>
