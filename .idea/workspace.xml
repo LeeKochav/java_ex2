@@ -4,15 +4,6 @@
     <list default="true" id="013f0542-9e4d-4cb8-b6e7-a753f683516b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitigonre" beforeDir="false" afterPath="$PROJECT_DIR$/.gitigonre" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex2Testing/algorithms/Graph_AlgoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Graph_AlgoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex2Testing/dataStructure/DGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/DGraphTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex2Testing/dataStructure/EdgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/EdgeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex2Testing/dataStructure/NodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/NodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/algorithms/Graph_Algo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ex2/dataStructure/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ex2/dataStructure/Edge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Edge.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +175,7 @@
       <workItem from="1577644540320" duration="2055000" />
       <workItem from="1577649023873" duration="2704000" />
       <workItem from="1577652438241" duration="1297000" />
-      <workItem from="1577700922060" duration="10096000" />
+      <workItem from="1577700922060" duration="10316000" />
     </task>
     <servers />
   </component>
