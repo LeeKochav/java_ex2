@@ -1,5 +1,6 @@
-package dataStructure;
+package Tests;
 
+import dataStructure.Node;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import utils.Point3D;

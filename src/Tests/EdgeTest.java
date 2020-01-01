@@ -1,5 +1,7 @@
-package dataStructure;
+package Tests;
 
+import dataStructure.Edge;
+import dataStructure.Node;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

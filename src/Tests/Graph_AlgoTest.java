@@ -1,5 +1,6 @@
-package algorithms;
+package Tests;
 
+import algorithms.Graph_Algo;
 import com.sun.org.apache.xpath.internal.objects.XNodeSet;
 import dataStructure.DGraph;
 import dataStructure.graph;

@@ -17,6 +17,12 @@ public class Graph_Algo implements graph_algorithms {
 	private static final VER_COMP comp = new VER_COMP();
 	private graph graph;
 
+	public Graph_Algo(){}
+
+	public Graph_Algo(graph g)
+	{
+		init(g);
+	}
 	@Override
 	public void init(graph g) {
 		this.graph = g;
@@ -60,7 +66,7 @@ public class Graph_Algo implements graph_algorithms {
 	@Override
 	public boolean isConnected() {
 		if(this.graph ==null) return false;
-		else if(this.graph.getV().size()==0) return false;
+		else if(this.graph.getV().size()==0) return true;
 		for (node_data nodeSrc: this.graph.getV()) {
 			for (node_data nodeDst: this.graph.getV()) {
 				if (shortestPathDist(nodeSrc.getKey(), nodeDst.getKey()) == Double.MAX_VALUE)

@@ -17,6 +17,8 @@ public class Edge implements edge_data, Serializable {
         this.src=src;
         this.dst=dst;
         this.setTag(1);
+        if(weight<0)
+            throw new RuntimeException("Weight cannot be negative");
         this.weight=weight;
         this.setInfo("");
     }
