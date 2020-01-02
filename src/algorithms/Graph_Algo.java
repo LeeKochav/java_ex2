@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.PriorityBlockingQueue;
 import dataStructure.*;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 
 /**
@@ -132,14 +131,10 @@ public class Graph_Algo implements graph_algorithms {
 
 	@Override
 	public List<node_data> shortestPath(int src, int dest) {
-		try {
-			shortestPathDist(src, dest);
-		}
-		catch(RuntimeException e)
-		{
-			System.out.println(e.getMessage());
-			return null;
-		}
+
+			double dist=shortestPathDist(src, dest);
+			if(dist==Double.MAX_VALUE) return null;
+
 		LinkedList<node_data> res=new LinkedList<>();
 		int t=dest;
 		while(this.graph.getNode(t).getKey()!=src)
@@ -164,6 +159,10 @@ public class Graph_Algo implements graph_algorithms {
 
 		LinkedList<node_data> res=new LinkedList<node_data>();
 		LinkedList<node_data> tmp;
+		if(targets.size()==1)
+		{
+			return null;
+		}
 		for(int i=0; i<targets.size()-1; i++)
 		{
 			try {

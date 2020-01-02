@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="013f0542-9e4d-4cb8-b6e7-a753f683516b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/Ex2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Ex2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Graph_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Graph_GUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Ex2Test">
+  <component name="RunManager" selected="JUnit.DGraphTest">
     <configuration name="DGraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -146,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Ex2Test" />
+        <item itemvalue="JUnit.DGraphTest" />
         <item itemvalue="JUnit.Graph_AlgoTest" />
         <item itemvalue="JUnit.NodeTest" />
         <item itemvalue="JUnit.EdgeTest" />
-        <item itemvalue="JUnit.DGraphTest" />
+        <item itemvalue="JUnit.Ex2Test" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +180,8 @@
       <workItem from="1577649023873" duration="2704000" />
       <workItem from="1577652438241" duration="1297000" />
       <workItem from="1577700922060" duration="12989000" />
-      <workItem from="1577898800252" duration="259000" />
+      <workItem from="1577898800252" duration="456000" />
+      <workItem from="1577963220260" duration="2974000" />
     </task>
     <servers />
   </component>

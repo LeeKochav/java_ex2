@@ -152,7 +152,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
             case "ShortestPathDistance":
                 ShortestPathDistCalc();
                 break;
-            case "ShortestPathDistCalcList":
+            case "ShortestPath":
                 ShortestPathDistCalcList();
                 break;
             case "TSP":
@@ -403,7 +403,6 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         }
         catch (Exception ex)
         {
-            ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "ERROR: " + ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -455,6 +454,5 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
     public void mouseExited(MouseEvent e) {
 
     }
-
 
 }

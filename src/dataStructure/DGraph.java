@@ -61,6 +61,11 @@ public class DGraph implements graph , Serializable {
 		node_data s=this.nodes.get(src);
 		node_data d=this.nodes.get(dest);
 		if(s!=null&&d!=null) {
+			edge_data edgeTmp=this.getEdge(src,dest);
+			if(edgeTmp!=null)
+			{
+				numEdg--;
+			}
 			edge_data edge = new Edge(s, d, w);
 			LinkedHashMap<Integer, edge_data> newConnection;
 			if (edges.get(src) == null) {
