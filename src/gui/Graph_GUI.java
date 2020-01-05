@@ -455,10 +455,5 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
     public void mouseExited(MouseEvent e) {
 
     }
-
-    public static  void main (String []args)
-    {
-        Graph_GUI g=new Graph_GUI();
-
-    }
+    
 }
