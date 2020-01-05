@@ -137,7 +137,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
     }
 
     @Override
-    synchronized public void actionPerformed(ActionEvent e) {
+     public void actionPerformed(ActionEvent e) {
         String str = e.getActionCommand();
         switch (str) {
             case "Save":
@@ -159,7 +159,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
                 ShortestPathDistTargetsList();
                 break;
             case "addNode":
-                JOptionPane.showMessageDialog(this,"Press the gui to insert a new node");
+                JOptionPane.showMessageDialog(this,"Press on the gui screen to insert a new node");
                 break;
             case "removeNode":
                 removeNodeGui();
@@ -313,6 +313,7 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
         fd.setVisible(true);
         algoGraph.init(fd.getDirectory() + fd.getFile());
         this.graph = algoGraph.copy();
+        algoGraph.init(this.graph);
         repaint();
     }
     private void ShortestPathDistCalc()
@@ -455,4 +456,9 @@ public class Graph_GUI extends JFrame implements ActionListener , MouseListener 
 
     }
 
+    public static  void main (String []args)
+    {
+        Graph_GUI g=new Graph_GUI();
+
+    }
 }

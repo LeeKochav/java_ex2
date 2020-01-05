@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="013f0542-9e4d-4cb8-b6e7-a753f683516b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Graph_Algo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Graph_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Graph_GUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +34,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/junit-platform-commons-1.4.0.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ex2 - Copy" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -70,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DGraphTest">
+  <component name="RunManager" selected="JUnit.NodeTest">
     <configuration name="DGraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -148,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DGraphTest" />
-        <item itemvalue="JUnit.Graph_AlgoTest" />
         <item itemvalue="JUnit.NodeTest" />
-        <item itemvalue="JUnit.EdgeTest" />
+        <item itemvalue="JUnit.Graph_AlgoTest" />
         <item itemvalue="JUnit.Ex2Test" />
+        <item itemvalue="JUnit.EdgeTest" />
+        <item itemvalue="JUnit.DGraphTest" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +179,8 @@
       <workItem from="1577652438241" duration="1297000" />
       <workItem from="1577700922060" duration="12989000" />
       <workItem from="1577898800252" duration="456000" />
-      <workItem from="1577963220260" duration="2974000" />
+      <workItem from="1577963220260" duration="3351000" />
+      <workItem from="1578248006458" duration="2456000" />
     </task>
     <servers />
   </component>
@@ -206,7 +205,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Tests/DGraphTest.java</url>
-          <line>64</line>
+          <line>63</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
